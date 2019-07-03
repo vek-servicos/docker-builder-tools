@@ -5,7 +5,10 @@
 
 FROM ubuntu:18.04 AS ubuntu
 
+# Update repository
 RUN apt-get update -yqq
+
+# Base tools
 RUN apt-get install -fyqq apt-utils
 RUN apt-get install -fyqq sudo
 
@@ -45,8 +48,8 @@ RUN sudo apt-get install -fyqq lsb
 # RUN sudo apt-get install -fyqq python python-pip
 RUN sudo apt-get install -fyqq python3 python3-pip
 # RUN sudo pip2 install --upgrade pip
-RUN sudo pip3 install --upgrade pip
-RUN sudo pip install --upgrade awscli
+RUN sudo pip3 install --quiet --upgrade pip
+RUN sudo pip3 install --quiet --upgrade awscli
 
 # Snap Package Manager
 # RUN sudo apt-get install -fyqq snapd
@@ -80,5 +83,5 @@ RUN sudo usermod -aG docker $(whoami)
 # Clean environment
 RUN sudo apt-get install -fyqq
 RUN sudo apt-get autoremove -yqq
-RUN sudo apt-get clean -yqq
+# RUN sudo apt-get clean -yqq
 RUN sudo apt-get autoclean -yqq
