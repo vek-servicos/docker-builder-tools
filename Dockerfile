@@ -57,9 +57,9 @@ RUN sudo apt-get install -fyqq gettext
 # Python/Pip
 # RUN sudo apt-get install -fyqq python python-pip
 RUN sudo apt-get install -fyqq python3 python3-pip
-# RUN sudo pip2 install --upgrade pip
-RUN sudo pip3 install --quiet --upgrade pip
-RUN sudo pip3 install --quiet --upgrade awscli
+# RUN sudo --set-home pip2 install --upgrade pip
+RUN sudo --set-home pip3 install --quiet --upgrade pip
+RUN sudo --set-home pip3 install --quiet --upgrade awscli
 
 # Snap Package Manager
 # RUN sudo apt-get install -fyqq snapd
