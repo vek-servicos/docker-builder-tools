@@ -33,7 +33,6 @@ RUN sudo apt-get install -fyqq wget
 RUN sudo apt-get install -fyqq xmlstarlet
 RUN sudo apt-get install -fyqq lsb
 RUN sudo apt-get install -fyqq jq
-RUN sudo apt-get install -fyqq gettext
 
 # Language Pack
 # RUN sudo apt-get install -fyqq locales
@@ -56,7 +55,7 @@ RUN sudo apt-get install -fyqq gettext
 
 # Python/Pip
 # RUN sudo apt-get install -fyqq python python-pip
-RUN sudo apt-get install -fyqq python3 python3-pip
+RUN sudo --set-home apt-get install -fyqq python3 python3-pip
 # RUN sudo --set-home pip2 install --upgrade pip
 RUN sudo --set-home pip3 install --quiet --upgrade pip
 RUN sudo --set-home pip3 install --quiet --upgrade awscli
